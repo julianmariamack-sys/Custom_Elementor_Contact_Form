@@ -1,0 +1,252 @@
+.cecf-widget {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cecf-panel {
+    width: 100%;
+    box-sizing: border-box;
+    background: #1c1c1c;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.cecf-form-inner {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.cecf-eyebrow {
+    margin: 0 0 8px;
+    text-align: center;
+    color: #fff;
+    font-size: 27px;
+    line-height: 1.15;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+}
+
+.cecf-heading {
+    margin: 0 0 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 46px;
+    line-height: 1.02;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+}
+
+.cecf-field {
+    margin: 0 0 10px;
+}
+
+.cecf-input,
+.cecf-textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    background: #5b5b5d;
+    color: #eee;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.4;
+    box-shadow: none;
+    transition: background-color .2s ease, box-shadow .2s ease;
+}
+
+.cecf-input {
+    height: 47px;
+    padding: 0 20px;
+}
+
+.cecf-textarea {
+    height: 250px;
+    min-height: 120px;
+    padding: 12px 20px;
+    resize: vertical;
+}
+
+.cecf-input::placeholder,
+.cecf-textarea::placeholder {
+    color: #eee;
+    opacity: 1;
+}
+
+.cecf-input:focus,
+.cecf-textarea:focus {
+    background: #666668;
+    box-shadow: 0 0 0 2px rgba(230, 187, 45, .55);
+}
+
+.cecf-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding-top: 0;
+}
+
+.cecf-consent {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 300;
+}
+
+.cecf-consent input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+
+.cecf-check {
+    position: relative;
+    display: inline-block;
+    flex: 0 0 14px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #8a8a8a;
+    box-sizing: border-box;
+}
+
+.cecf-consent input:checked + .cecf-check::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 0px;
+    width: 5px;
+    height: 9px;
+    border: solid #e6bb2d;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.cecf-consent input:focus-visible + .cecf-check {
+    outline: 2px solid #e6bb2d;
+    outline-offset: 2px;
+}
+
+.cecf-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 230px;
+    min-height: 55px;
+    padding: 12px 25px;
+    border: 0;
+    border-radius: 11px;
+    background: #e6bb2d;
+    color: #fff;
+    font-family: inherit;
+    font-size: 21px;
+    line-height: 1;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none;
+    transition: transform .2s ease, filter .2s ease, opacity .2s ease;
+}
+
+.cecf-button:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+}
+
+.cecf-button:focus-visible {
+    outline: 3px solid rgba(230, 187, 45, .5);
+    outline-offset: 3px;
+}
+
+.cecf-button[disabled] {
+    opacity: .75;
+    cursor: wait;
+    transform: none;
+}
+
+.cecf-spinner {
+    display: none;
+    width: 16px;
+    height: 16px;
+    margin-left: 9px;
+    border: 2px solid rgba(255,255,255,.45);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: cecf-spin .75s linear infinite;
+}
+
+.cecf-form.is-sending .cecf-spinner {
+    display: inline-block;
+}
+
+.cecf-form.is-sending .cecf-button-text {
+    opacity: .9;
+}
+
+.cecf-response {
+    width: 100%;
+    margin-top: 14px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 0;
+}
+
+.cecf-response.is-success {
+    color: #d7e9b4;
+}
+
+.cecf-response.is-error {
+    color: #ffb7b7;
+}
+
+.cecf-honeypot {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
+@keyframes cecf-spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 767px) {
+    .cecf-eyebrow {
+        font-size: 22px;
+    }
+
+    .cecf-heading {
+        font-size: 36px;
+    }
+
+    .cecf-input,
+    .cecf-textarea {
+        font-size: 16px;
+    }
+
+    .cecf-textarea {
+        height: 210px;
+    }
+
+    .cecf-consent {
+        align-self: center;
+        text-align: left;
+    }
+
+    .cecf-button {
+        width: 100%;
+        min-width: 0;
+    }
+}
